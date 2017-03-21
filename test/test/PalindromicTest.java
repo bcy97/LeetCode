@@ -18,4 +18,32 @@ public class PalindromicTest {
 		Palindromic palindromic = new Palindromic();
 		assertEquals("bb", palindromic.longestPalindrome("cbbd"));
 	}
+	
+	@Test
+	public void testManacher3(){
+		Palindromic palindromic = new Palindromic();
+		assertEquals("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaa"
+				, palindromic.longestPalindrome("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+	}
+	
+	@Test
+	public void testManacher4(){
+		Palindromic palindromic = new Palindromic();
+		assertEquals("aaabaaa", palindromic.longestPalindrome("aaabaaaa"));
+	}
 }
