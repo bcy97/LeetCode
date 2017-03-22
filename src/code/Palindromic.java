@@ -6,8 +6,8 @@ public class Palindromic {
 
 	public String longestPalindrome(String s) {
 		
-		if (s==null) {
-			return null;
+		if (s.length()<2) {
+			return s;
 		}
 		
 		String newString = "#";
@@ -32,24 +32,15 @@ public class Palindromic {
 				//r为i的半径为对称的点的r和i到最右端的距离的最小值
 				r = RL[id]-i+id < RL[2*id-i] ? RL[id]-i+id : RL[2*id-i];
 				
-				while (i+r<newString.length()&&i-r>=0&&newString.charAt(i+r)==newString.charAt(i-r)) {
-						r++;
-				}
 				
-				if (i+r-1>maxRight) {
-					maxRight = i+r-1;
-					id = i;
-				}
-				
-			}else {
-				
-				while (i+r<newString.length()&&i-r>=0&&newString.charAt(i+r)==newString.charAt(i-r)) {
-						r++;
-				}
-				if (r+r-1>maxRight) {
-					maxRight =  i+r-1;
-					id  = i;
-				}
+			}	
+			
+			while (i+r<newString.length()&&i-r>=0&&newString.charAt(i+r)==newString.charAt(i-r)) {
+				r++;
+			}
+			if (r+r-1>maxRight) {
+				maxRight =  i+r-1;
+				id  = i;
 			}
 			
 			RL[i] = r;
