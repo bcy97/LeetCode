@@ -3,7 +3,6 @@ package code;
 public class StringToInt {
 
 	public int stringToInt(String str) {
-		
 		if (str==null||str.trim().equals("")) {
 			return  0;
 		}

@@ -11,7 +11,7 @@ public class StringToIntTest {
 	@Test
 	public void testStringToInt1(){
 		StringToInt stringToInt = new StringToInt();
-		assertEquals(0, stringToInt.stringToInt("        "));
+		assertEquals(0, stringToInt.stringToInt("     +-15651"));
 	}
 	@Test
 	public void testStringToInt2(){
