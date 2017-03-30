@@ -11,7 +11,7 @@ public class IntegerToRomanTest {
 	@Test
 	public void testConverseMyself1() {
 		IntegerToRoman integerToRoman = new IntegerToRoman();
-		assertEquals("I", integerToRoman.converseMyself(1));
+		assertEquals("MMMDLXXXVI", integerToRoman.converseMyself(3586));
 	}
 	
 	@Test
