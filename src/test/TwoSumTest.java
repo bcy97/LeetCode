@@ -12,7 +12,7 @@ public class TwoSumTest {
 	public void testTwoSumLowest(){
 		TwoSum twoSum = new TwoSum();
 		int[] nums = {1, 3, 1, 5, 4};
-		int[] trueResult = {0,1};
+		int[] trueResult = {3,4};
 		int[] result = twoSum.twoSumLowest(nums, 9);
 		assertArrayEquals(trueResult, result);
 	}
