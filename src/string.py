@@ -1,4 +1,4 @@
-##!/usr/bin/python3
+#!/usr/bin/python3
 
 var1 = 'Hello World!'
 var2 = "Python Programming"
