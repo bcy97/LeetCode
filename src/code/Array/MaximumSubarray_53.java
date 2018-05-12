@@ -1,4 +1,4 @@
-package code;
+package code.Array;
 
 public class MaximumSubarray_53 {
 
