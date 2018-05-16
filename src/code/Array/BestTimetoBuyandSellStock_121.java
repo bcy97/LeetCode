@@ -14,16 +14,20 @@ public class BestTimetoBuyandSellStock_121 {
         }
 
         int max = 0;
+        int sum = 0;
         int diff = 0;
         int in = prices[0];
         for (int i = 1; i < prices.length; i++) {
             diff = prices[i] - in;
+
             if (prices[i] - in < 0) {
                 in = prices[i];
                 diff = 0;
             }
             if (diff > max) {
                 max = diff;
+            } else {
+                in = prices[i];
             }
         }
 
