@@ -10,6 +10,7 @@ public class BestTimetoBuyandSellStock_121 {
     public static int maxProfit(int[] prices) {
 
         if (prices.length == 0) {
+
             return 0;
         }
 
