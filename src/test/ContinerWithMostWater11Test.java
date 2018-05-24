@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import code.Array.ContinerWithMostWater_11;
-
 public class ContinerWithMostWater11Test {
 
 	@Test
