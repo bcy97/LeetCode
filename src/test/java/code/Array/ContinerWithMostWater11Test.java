@@ -1,6 +1,3 @@
-package Array;
-
-
 import code.Array.ContainerWithMostWater_11;
 import org.junit.Test;
 
