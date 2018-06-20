@@ -1,30 +1,33 @@
 package code.backtracking;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class NQueens_51 {
 
     public static void main(String[] args) {
-
-        solveNQueens(4);
+//        solveNQueens_low(4);
+        System.out.println(solveNQueens_high(4));
     }
 
-    public static List<List<String>> solveNQueens(int n) {
+    /**
+     * beats12.5%
+     *
+     * @param n
+     * @return
+     */
+    public static List<List<String>> solveNQueens_low(int n) {
 
         short[][] queens = new short[n][n];
 
         List<List<String>> result = new ArrayList<>();
 
-        placeQueen(queens, 0, result);
+        placeQueen_low(queens, 0, result);
 
-        System.out.println(result);
         return result;
     }
 
-    public static void placeQueen(short[][] queens, int row, List<List<String>> result) {
+    public static void placeQueen_low(short[][] queens, int row, List<List<String>> result) {
 
         if (row == queens.length) {
             List<String> solution = new ArrayList<>();
@@ -36,6 +39,7 @@ public class NQueens_51 {
                 solution.add(rows);
             }
             result.add(solution);
+            return;
         }
 
         short[][] temp = queens.clone();
@@ -45,25 +49,74 @@ public class NQueens_51 {
                 temp[row][j] = 0;
             }
             temp[row][i] = 1;
-            if (safe(queens, row, i)) {
-                placeQueen(temp, row + 1, result);
+            if (safe_low(queens, row, i)) {
+                placeQueen_low(temp, row + 1, result);
             }
         }
 
     }
 
-    public static boolean safe(short[][] queens, int row, int col) {
+    public static boolean safe_low(short[][] queens, int row, int col) {
         int step = 1;
         while (row - step >= 0) {
-            if (queens[row - step][col] == 1)                //中上
+            if (queens[row - step][col] == 1)
                 return false;
-            if (col - step >= 0 && queens[row - step][col - step] == 1)        //左上
+            if (col - step >= 0 && queens[row - step][col - step] == 1)
                 return false;
-            if (col + step < queens.length && queens[row - step][col + step] == 1)        //右上
+            if (col + step < queens.length && queens[row - step][col + step] == 1)
                 return false;
 
             step++;
         }
+        return true;
+    }
+
+    /**
+     * beats35.7%
+     *
+     * @param n
+     * @return
+     */
+    public static List<List<String>> solveNQueens_high(int n) {
+        List<List<String>> result = new ArrayList<>();
+
+        short[] queens = new short[n];
+
+        placeQueen_high(queens, 0, result);
+
+        return result;
+    }
+
+    public static void placeQueen_high(short[] queens, int row, List<List<String>> result) {
+        if (row == queens.length) {
+            List<String> solution = new ArrayList<>();
+            for (int i = 0; i < row; i++) {
+                String rows = "";
+                for (int j = 0; j < row; j++) {
+                    rows += queens[i] == j ? "Q" : ".";
+                }
+                solution.add(rows);
+            }
+            result.add(solution);
+            return;
+        }
+        short[] temp = queens.clone();
+        for (short i = 0; i < queens.length; i++) {
+            temp[row] = i;
+            if (safe_high(temp, row)) {
+                placeQueen_high(temp, row + 1, result);
+            }
+        }
+    }
+
+    private static boolean safe_high(short[] queens, int row) {
+
+        for (int i = 0; i < row; i++) {
+            if (queens[i] == queens[row] || queens[i] - i == queens[row] - row || (queens[i] + i) == (queens[row] + row)) {
+                return false;
+            }
+        }
+
         return true;
     }
 
