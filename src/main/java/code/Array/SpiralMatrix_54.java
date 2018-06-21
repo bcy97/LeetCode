@@ -6,9 +6,11 @@ import java.util.List;
 public class SpiralMatrix_54 {
     public static void main(String[] args) {
         System.out.println(new SpiralMatrix_54().spiralOrder(new int[][]{
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12}
+                {1, 2, 3, 4, 5},
+                {6, 7, 8, 9, 10},
+                {11, 12, 13, 14, 15},
+                {16, 17, 18, 19, 20},
+                {21, 22, 23, 24, 25}
         }));
     }
 
@@ -16,7 +18,18 @@ public class SpiralMatrix_54 {
 
         List<Integer> result = new ArrayList<>();
 
-        int m = matrix.length, n = matrix[0].length;
+        int m = matrix.length;
+        if (m == 0) {
+            return result;
+        }
+        int n = matrix[0].length;
+        if (n == 1) {
+            for (int i = 0; i < m; i++) {
+                result.add(matrix[i][0]);
+            }
+            return result;
+        }
+
         //1 →,2 ↓,3 ←,4 ↑
         int model = 1;
 
@@ -53,7 +66,7 @@ public class SpiralMatrix_54 {
                     row--;
                     if (row == bt) {
                         model = 1;
-                        bt++;
+                        bl++;
                     }
             }
         }
