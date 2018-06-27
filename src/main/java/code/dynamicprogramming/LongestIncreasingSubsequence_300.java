@@ -1,7 +1,5 @@
 package code.dynamicprogramming;
 
-import java.util.Arrays;
-
 public class LongestIncreasingSubsequence_300 {
 
     public static void main(String[] args) {
@@ -16,6 +14,7 @@ public class LongestIncreasingSubsequence_300 {
 
         int[] len = new int[nums.length];
 
+        int max = 0;
         for (int i = 0; i < nums.length; i++) {
             len[i] = 1;
             for (int j = 0; j < i; j++) {
@@ -23,9 +22,9 @@ public class LongestIncreasingSubsequence_300 {
                     len[i] = len[j] + 1;
                 }
             }
+            max = len[i] > max ? len[i] : max;
         }
 
-        Arrays.sort(len);
 
         return len[nums.length - 1];
     }
